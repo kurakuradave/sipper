@@ -2,12 +2,12 @@
   "db1":{
     "connectStr":"mongo://u1:p1@addr1:port1/someDBName?authSource=authCol1",
     "db":"someDBName",
-    "col" : "someColName",
+    "col" : "someColName"
   },
   "db2":{
     "connectStr":"mongo://u2:p2@addr2:port2/someDBName?authSource=authCol2",
     "db":"someDBName",
-    "col" : "someColName",  
+    "col" : "someColName"
   },
   "sipColName": "sipper",
   "sipLength": 100,

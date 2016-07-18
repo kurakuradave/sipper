@@ -1,6 +1,6 @@
 var config = require( './config.json' );
 var async = require( 'async' );
-ar dbDriver = require( './dbDriver.js' );
+var dbDriver = require( './dbDriver.js' );
 
 var currObjId = "";
 
@@ -59,7 +59,7 @@ var doIt = function( callback ) {
 
 
 
-vvar onandon = function(  ) {
+var onandon = function(  ) {
   doIt( function( err ) {  
     if( err ){
       console.log( "ERROR while sip-pooey-ing!" );
