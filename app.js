@@ -2,7 +2,7 @@ var config = require( './config.json' );
 var async = require( 'async' );
 var dbDriver = require( './dbDriver.js' );
 
-var currObjId = "";
+var currObjId = null;
 
 
 
@@ -20,7 +20,7 @@ var doIt = function( callback ) {
     },
     function( docs, wcb ) {
       async.eachSeries( docs, function( daDoc, ascb ) {  
-        dbDriver.pooey( daDoc, function( err ) {  
+        dbDriver.spit( daDoc, function( err ) {  
           if( err ) ascb( err );
           else{ 
             ascb( null );
@@ -29,7 +29,7 @@ var doIt = function( callback ) {
       }, function( err ) {  
         if( err ) wcb( err );
         else{
-          console.log( "pooey-ed %d docs", docs.length );   
+          console.log( "spit %d docs", docs.length );   
           // set anchor
           currObjId = docs[ docs.length-1 ]['_id'];
           dbDriver.anchor( currObjId, function( err ) {  
@@ -50,7 +50,7 @@ var doIt = function( callback ) {
   ], function( err ) { 
     if( err ) callback( err );
     else{
-      console.log( ">>> one sip-pooey cycle done!" );
+      console.log( ">>> one sip-spit cycle done!" );
       callback( null );
     }
   } );
@@ -62,7 +62,7 @@ var doIt = function( callback ) {
 var onandon = function(  ) {
   doIt( function( err ) {  
     if( err ){
-      console.log( "ERROR while sip-pooey-ing!" );
+      console.log( "ERROR while sip-spittting!" );
       console.log( err );
     } else {
       onandon();
